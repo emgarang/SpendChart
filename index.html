@@ -1,78 +1,172 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="spendly_logo.svg">
-  <title>SpendChart</title>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg+xml" href="spendly_logo.svg" />
+    <title>SpendChart</title>
+  </head>
 
-<body>
-  <header class="logo-and-title">
-    <img src="spendchart_logo.svg" alt="SpendChart Logo">
-    <h1>SpendChart</h1>
-  </header>
+  <body>
+    <header class="logo-and-title">
+      <img src="spendchart_logo.svg" alt="SpendChart Logo" />
+      <h1>SpendChart</h1>
+    </header>
 
-  <main>
-    <section class="introduction">
-      <h2>Welcome to SpendChart!</h2>
-      <p>Your personal expense tracker to help you manage your finances effectively.</p>
-    </section>
+    <main>
+      <section class="introduction">
+        <h2>Welcome to SpendChart!</h2>
+        <p>
+          Your personal expense tracker to help you manage your finances
+          effectively.
+        </p>
+      </section>
 
-    <section class="features">
-      <h2>Features</h2>
-      <div class="feature-cards">
-        <div class="card">
-          <h3>Monthly Budget</h3>
-          <p id="budget">$0.00</p>
-          <label class="update-btn" data-type="budget">Add+</label>
-          <table>
-            <tr>
-              <th>Expense</th>
-              <th>Amount</th>
-            </tr>
-            <tr>
-              <td>Rent/Mortgage</td>
-              <td><input type="number" class="expense-input" placeholder="0.00"></td>
-            </tr>
-            <tr>
-              <td>Utilities</td>
-              <td><input type="number" class="expense-input" placeholder="0.00"></td>
-            </tr>
-            <tr>
-              <td>Groceries</td>
-              <td><input type="number" class="expense-input" placeholder="0.00"></td>
-            </tr>
-            <tr>
-              <td>Transportation</td>
-              <td><input type="number" class="expense-input" placeholder="0.00"></td>
-            </tr>
-            <tr>
-              <td>Entertainment</td>
-              <td><input type="number" class="expense-input" placeholder="0.00"></td>
-            </tr>
-          </table>
+      <section class="features">
+        <h2>Features</h2>
+        <div class="feature-cards">
+          <div class="card">
+            <h3>Monthly Budget</h3>
+            <p id="budget">$0.00</p>
+            <label class="update-btn" data-type="budget">Add+</label>
+            <table>
+              <tr>
+                <th>Expense</th>
+                <th>Amount</th>
+              </tr>
+              <tr>
+                <td>Rent/Mortgage</td>
+                <td>
+                  <input
+                    type="number"
+                    class="expense-input"
+                    placeholder="0.00"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Utilities</td>
+                <td>
+                  <input
+                    type="number"
+                    class="expense-input"
+                    placeholder="0.00"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Groceries</td>
+                <td>
+                  <input
+                    type="number"
+                    class="expense-input"
+                    placeholder="0.00"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Transportation</td>
+                <td>
+                  <input
+                    type="number"
+                    class="expense-input"
+                    placeholder="0.00"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>Entertainment</td>
+                <td>
+                  <input
+                    type="number"
+                    class="expense-input"
+                    placeholder="0.00"
+                  />
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="card">
+            <h3>Total Expenses</h3>
+            <p id="expenses">$0.00</p>
+          </div>
+
+          <div class="card">
+            <h3>Remaining Balance</h3>
+            <p id="balance">$0.00</p>
+          </div>
+
+          <div class="card">
+            <h3>Savings</h3>
+            <p id="savings">$0.00</p>
+            <label class="update-btn" data-type="savings">Add+</label>
+          </div>
         </div>
-        <div class="card">
-          <h3>Total Expenses</h3>
-          <p id="expenses">$0.00</p>
-        </div>
+      </section>
+    </main>
 
-        <div class="card">
-          <h3>Remaining Balance</h3>
-          <p id="balance">$0.00</p>
-        </div>
+    <script>
+      // State management
+      let budget = 0
+      let savings = 0
 
-        <div class="card">
-          <h3>Savings</h3>
-          <p id="savings">$0.00</p>
-          <label class="update-btn" data-type="savings">Add+</label>
-        </div>
-      </div>
-    </section>
-  </main>
+      // Get DOM elements
+      const budgetElement = document.getElementById('budget')
+      const expensesElement = document.getElementById('expenses')
+      const balanceElement = document.getElementById('balance')
+      const savingsElement = document.getElementById('savings')
+      const expenseInputs = document.querySelectorAll('.expense-input')
+      const updateButtons = document.querySelectorAll('.update-btn')
 
-  <script></script>
-</body>
+      // Function to calculate total expenses
+      function calculateTotalExpenses() {
+        let total = 0
+        expenseInputs.forEach(input => {
+          const value = parseFloat(input.value) || 0
+          total += value
+        })
+        return total
+      }
+
+      // Function to update all displays
+      function updateDisplays() {
+        const totalExpenses = calculateTotalExpenses()
+        const balance = budget - totalExpenses
+
+        expensesElement.textContent = `$${totalExpenses.toFixed(2)}`
+        balanceElement.textContent = `$${balance.toFixed(2)}`
+      }
+
+      // Add event listeners to expense inputs
+      expenseInputs.forEach(input => {
+        input.addEventListener('input', updateDisplays)
+      })
+
+      // Add event listeners to update buttons
+      updateButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          const type = this.getAttribute('data-type')
+
+          if (type === 'budget') {
+            const value = prompt('Enter your monthly budget:')
+            if (value !== null && value !== '') {
+              budget = parseFloat(value) || 0
+              budgetElement.textContent = `$${budget.toFixed(2)}`
+              updateDisplays()
+            }
+          } else if (type === 'savings') {
+            const value = prompt('Enter your savings amount:')
+            if (value !== null && value !== '') {
+              savings = parseFloat(value) || 0
+              savingsElement.textContent = `$${savings.toFixed(2)}`
+            }
+          }
+        })
+      })
+
+      // Initialize displays
+      updateDisplays()
+    </script>
+  </body>
 </html>

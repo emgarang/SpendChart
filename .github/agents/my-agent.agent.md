@@ -4,8 +4,8 @@
 # To make this agent available, merge this file into the default repository branch.
 # For format details, see: https://gh.io/customagents/config
 
-name:
-description:
+name: Copilot 
+description: A custom agent to test SpendChart application functionality using Selenium.
 ---
 
 # My Agent
@@ -21,6 +21,6 @@ description:
 
 Format code with linters (black for Python, prettier for JS/HTML)
 Run and validate all tests
-Code review completed
+Code review
 Security check with CodeQL
 Add .gitignore for Python cache files

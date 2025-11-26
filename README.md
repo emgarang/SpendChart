@@ -4,12 +4,12 @@ SpendChart is a small, friendly web app that helps you understand and manage you
 
 **Key ideas:** quick insights, low friction tracking, and clear visuals so you can make better spending decisions.
 
-##Demo
+## Demo
 
 - Open `index.html` in your browser to view the app locally, or run a local HTTP server (instructions below).
 - Add screenshots to the `docs/` folder and link them here for a nicer README.
 
-##Features
+## Features
 
 - Track expenses with date, amount, category, and notes.
 - Set and monitor savings goals.
@@ -24,7 +24,7 @@ SpendChart is a small, friendly web app that helps you understand and manage you
 
 - Python 3.8+ (optional — only needed if you want to run a local HTTP server or run tests).
 
-##Quick start (view locally)
+## Quick start (view locally)
 
 1. Open the app directly:
 
@@ -39,7 +39,7 @@ python -m http.server 8000
 # Then open http://localhost:8000 in your browser
 ```
 
-##Install dependencies (optional, for running tests or Python helpers)
+## Install dependencies (optional, for running tests or Python helpers)
 
 ```powershell
 python -m venv .venv
@@ -60,12 +60,12 @@ pytest -q
 - The app is intentionally small and frontend-first. If you want to add persistence (save data between sessions), consider adding a lightweight backend (Flask, FastAPI) or using browser storage / IndexedDB.
 - If you add build tooling (e.g., bundlers or preprocessors), include a `package.json` and update this README with build/run steps.
 
-##Contributing
+## Contributing
 
 - Found a bug or want a feature? Open an issue or submit a pull request.
 - Keep changes focused and include short descriptions and screenshots where appropriate.
 
-##Ideas for improvements
+## Ideas for improvements
 
 - CSV import/export of transactions.
 - Recurring transactions and notifications.

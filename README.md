@@ -13,7 +13,7 @@ SpendChart is a small, friendly web app that helps you understand and manage you
 
 - Track expenses with date, amount, category, and notes.
 - Set and monitor savings goals.
-- Lightweight frontend-first implementation — works offline as a static site.
+- Lightweight frontend-first implementation
 
 **Tech stack**
 

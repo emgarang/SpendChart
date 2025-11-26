@@ -6,6 +6,8 @@ SpendChart is a small, friendly web app that helps you understand and manage you
 
 ## Demo
 
+C:\Users\emman\SpendChart\SpendChart\Demo(1).mp4
+
 - Open `index.html` in your browser to view the app locally, or run a local HTTP server (instructions below).
 - Add screenshots to the `docs/` folder and link them here for a nicer README.
 

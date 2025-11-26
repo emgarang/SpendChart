@@ -18,7 +18,7 @@ SpendChart is a small, friendly web app that helps you understand and manage you
 
 **Tech stack**
 
-- Frontend: HTML, CSS, and JavaScript (single-page/static site).
+- Frontend: HTML, CSS, and JavaScript.
 - Optional: Python for local dev/test utilities (see `requirements.txt` and `test_file.py`).
 
 **Prerequisites**

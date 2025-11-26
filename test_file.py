@@ -30,9 +30,9 @@ def test_expense_input_updates_totals(html_file_path):
         page.goto(html_file_path)
 
         inputs = page.locator(".expense-input")
-        inputs.nth(0).fill("100")   # Rent
-        inputs.nth(1).fill("50")    # Utilities
-        inputs.nth(2).fill("25")    # Groceries
+        inputs.nth(0).fill("100")
+        inputs.nth(1).fill("50")    
+        inputs.nth(2).fill("25")    
 
         # Small wait to allow events to fire
         page.wait_for_timeout(200)

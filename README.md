@@ -1,6 +1,6 @@
 # SpendChart
 
-SpendChart is a small, friendly web app that helps you understand and manage your personal spending. It provides a clean dashboard to track expenses, visualize spending by category, and set simple savings goals — all from a lightweight static site that runs in your browser.
+SpendChart is a small, friendly web app that helps you understand and manage your personal spending. It provides a clean dashboard to track expenses, visualize spending by category, and set simple savings goals all from a lightweight static site that runs in your browser.
 
 **Key ideas:** quick insights, low friction tracking, and clear visuals so you can make better spending decisions.
 

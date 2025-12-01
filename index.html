@@ -129,6 +129,7 @@
           budgetElement.textContent = '$' + budget.toFixed(2)
           expensesElement.textContent = '$' + totalExpenses.toFixed(2)
           balanceElement.textContent = '$' + (budget - totalExpenses).toFixed(2)
+          balanceElement.textContent = '$' + (budget - totalExpenses - savings).toFixed(2)
           savingsElement.textContent = '$' + savings.toFixed(2)
         }
 

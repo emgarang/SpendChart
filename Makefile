@@ -1,4 +1,4 @@
 lint:
-    echo "No lint needed for static site."
+	echo "No linting configured"
 serve:
 	python3 -m http.server

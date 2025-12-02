@@ -40,14 +40,6 @@ python -m http.server 8000
 # Then open http://localhost:8000 in your browser
 ```
 
-## Install dependencies (optional, for running tests or Python helpers)
-
-```powershell
-python -m venv .venv
-.\\.venv\\Scripts\\Activate.ps1
-pip install -r requirements.txt
-```
-
 **Run tests**
 
 If you have `pytest` in `requirements.txt`, run:
